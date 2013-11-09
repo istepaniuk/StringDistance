@@ -61,10 +61,11 @@ namespace Istepaniuk.StringDistance
             return score[source.Length + 1, target.Length + 1];
         }
 
-        private SortedDictionary<char, int> GetSortedDictionaryWithAllLettersFrom(string word1, string word2)
+        private  SortedDictionary<char, int> GetSortedDictionaryWithAllLettersFrom(params string[] words)
         {
             var sd = new SortedDictionary<char, int>();
-            foreach (var letter in word1 + word2)
+            var letters = words.SelectMany(x => x);
+            foreach (var letter in letters)
             {
                 if (!sd.ContainsKey(letter))
                     sd.Add(letter, 0);
