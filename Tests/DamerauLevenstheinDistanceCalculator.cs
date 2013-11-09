@@ -56,6 +56,32 @@ namespace Istepaniuk.StringDistance
         {
             calculator.Distance("hell", "hellow").Should().Be(2);
         }
+
+        [Test]
+        public void IfBothStringsAreEmptyTheDistanceIsZero()
+        {
+            calculator.Distance(string.Empty, string.Empty).Should().Be(0);
+        }
+
+        [Test]
+        public void IfAStringIsAreEmptyTheDistanceIsTheLengthOfTheOtherOne()
+        {
+            calculator.Distance(string.Empty, "1234").Should().Be(4);
+            calculator.Distance("1234", string.Empty).Should().Be(4);
+        }
+
+        [Test]
+        public void IfBothStringsAreNullTheDistanceIsZero()
+        {
+            calculator.Distance(null, null).Should().Be(0);
+        }
+
+        [Test]
+        public void IfAStringIsAreNullTheDistanceIsTheLengthOfTheOtherOne()
+        {
+            calculator.Distance(null, "1234").Should().Be(4);
+            calculator.Distance("1234", null).Should().Be(4);
+        }
     }
 }
 
