@@ -63,14 +63,12 @@ namespace Istepaniuk.StringDistance
 
         private  SortedDictionary<char, int> GetSortedDictionaryWithAllLettersFrom(params string[] words)
         {
-            var sd = new SortedDictionary<char, int>();
-            var letters = words.SelectMany(x => x);
-            foreach (var letter in letters)
-            {
-                if (!sd.ContainsKey(letter))
-                    sd.Add(letter, 0);
-            }
-            return sd;
+            var letterDictionary = words
+                .SelectMany(x => x)
+                .Distinct()
+                .ToDictionary(key => key, value => 0);
+
+            return new SortedDictionary<char, int>(letterDictionary);
         }
     }
 }
