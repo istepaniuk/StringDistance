@@ -1,11 +1,12 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Istepaniuk.StringDistance
 {
     public class DamerauLevenstheinDistanceCalculator
     {
-        public int Distance(string source,string target)
+        public int Distance(string source, string target)
         {
             if (String.IsNullOrEmpty(source))
             {
@@ -31,12 +32,7 @@ namespace Istepaniuk.StringDistance
                 score[0, j + 1] = INF;
             }
 
-            var sd = new SortedDictionary<char, int>();
-            foreach (var letter in (source + target))
-            {
-                if (!sd.ContainsKey(letter))
-                    sd.Add(letter, 0);
-            }
+            var sd = GetSortedDictionaryWithAllLettersFrom(source, target);
 
             for (var i = 1; i <= source.Length; i++)
             {
@@ -63,6 +59,17 @@ namespace Istepaniuk.StringDistance
             }
 
             return score[source.Length + 1, target.Length + 1];
+        }
+
+        private SortedDictionary<char, int> GetSortedDictionaryWithAllLettersFrom(string word1, string word2)
+        {
+            var sd = new SortedDictionary<char, int>();
+            foreach (var letter in word1 + word2)
+            {
+                if (!sd.ContainsKey(letter))
+                    sd.Add(letter, 0);
+            }
+            return sd;
         }
     }
 }
