@@ -54,15 +54,12 @@ namespace Istepaniuk.StringDistance
                 || String.IsNullOrEmpty (string2);
         }
 
-        private int LengthOfTheNonEmptyString (string string1, string string2)
+        private int LengthOfTheNonEmptyString (params string[] strings)
         {
-            if (!(String.IsNullOrEmpty (string1) && String.IsNullOrEmpty (string2))) {
-                if (String.IsNullOrEmpty (string1))
-                    return string2.Length;
-                if (String.IsNullOrEmpty (string2))
-                    return string1.Length;
-            }
-            return 0;
+            return strings
+                .Select(word => word ?? string.Empty)
+                .Select(word => word.Length)
+                .Max();
         }
 
         private  SortedDictionary<char, int> GetSortedDictionaryWithAllLettersFrom (params string[] words)
