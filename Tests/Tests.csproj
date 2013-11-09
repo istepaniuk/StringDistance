@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C1A65005-0974-4B58-BC9C-1847869BBE73}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Tests</RootNamespace>
+    <RootNamespace>Istepaniuk.StringDistance.Tests</RootNamespace>
     <AssemblyName>Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,17 +40,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DamerauLevenstheinDistanceCalculator.cs" />
+    <Compile Include="DamerauLevenstheinDistanceCalculatorTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\StringDistance\StringDistance.csproj">
-      <Project>{72C20761-113B-4A45-9F46-01806E76C998}</Project>
-      <Name>StringDistance</Name>
-    </ProjectReference>
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
@@ -62,4 +56,10 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <ProjectReference Include="..\DamerauLevenshtein\DamerauLevenshtein.csproj">
+      <Project>{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}</Project>
+      <Name>DamerauLevenshtein</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

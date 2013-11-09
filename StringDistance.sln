@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringDistance", "StringDistance\StringDistance.csproj", "{72C20761-113B-4A45-9F46-01806E76C998}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStringDistance", "StringDistance\ConsoleStringDistance.csproj", "{72C20761-113B-4A45-9F46-01806E76C998}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C1A65005-0974-4B58-BC9C-1847869BBE73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DamerauLevenshtein", "DamerauLevenshtein\DamerauLevenshtein.csproj", "{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +21,13 @@ Global
 		{C1A65005-0974-4B58-BC9C-1847869BBE73}.Debug|x86.Build.0 = Debug|Any CPU
 		{C1A65005-0974-4B58-BC9C-1847869BBE73}.Release|x86.ActiveCfg = Release|Any CPU
 		{C1A65005-0974-4B58-BC9C-1847869BBE73}.Release|x86.Build.0 = Release|Any CPU
+		{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = StringDistance\StringDistance.csproj
+		StartupItem = StringDistance\ConsoleStringDistance.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

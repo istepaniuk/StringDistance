@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
+using Istepaniuk.StringDistance.DamerauLevenshtein;
 
-namespace Istepaniuk.StringDistance
+namespace Istepaniuk.StringDistance.ConsoleStringDistance
 {
     class MainClass
     {
