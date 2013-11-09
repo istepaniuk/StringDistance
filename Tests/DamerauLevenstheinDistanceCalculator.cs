@@ -1,4 +1,3 @@
-using System;
 using Istepaniuk.StringDistance;
 using NUnit.Framework;
 using FluentAssertions;
@@ -6,14 +5,14 @@ using FluentAssertions;
 namespace Istepaniuk.StringDistance
 {
     [TestFixture]
-    public class LevenstheinDistanceCalculatorTests
+    public class DamerauLevenstheinDistanceCalculatorTests
     {
-        private LevenstheinDistanceCalculator calculator;
+        private DamerauLevenstheinDistanceCalculator calculator;
 
         [TestFixtureSetUp]
         public void SetUp()
         {
-            calculator = new LevenstheinDistanceCalculator();
+            calculator = new DamerauLevenstheinDistanceCalculator();
         }
 
         [Test]

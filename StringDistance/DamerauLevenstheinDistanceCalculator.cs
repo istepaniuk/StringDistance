@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 namespace Istepaniuk.StringDistance
 {
-
-    public class LevenstheinDistanceCalculator
+    public class DamerauLevenstheinDistanceCalculator
     {
-        public int Distance(string source, string target)
+        public int Distance(string source,string target)
         {
             if (String.IsNullOrEmpty(source))
             {
@@ -28,8 +27,16 @@ namespace Istepaniuk.StringDistance
 
             var INF = source.Length + target.Length;
             score[0, 0] = INF;
-            for (var i = 0; i <= source.Length; i++) { score[i + 1, 1] = i; score[i + 1, 0] = INF; }
-            for (var j = 0; j <= target.Length; j++) { score[1, j + 1] = j; score[0, j + 1] = INF; }
+            for (var i = 0; i <= source.Length; i++)
+            {
+                score[i + 1, 1] = i;
+                score[i + 1, 0] = INF;
+            }
+            for (var j = 0; j <= target.Length; j++)
+            {
+                score[1, j + 1] = j;
+                score[0, j + 1] = INF;
+            }
 
             var sd = new SortedDictionary<char, int>();
             foreach (var letter in (source + target))

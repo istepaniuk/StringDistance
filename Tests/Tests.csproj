@@ -40,7 +40,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LevenstheinDistanceCalculator.cs" />
+    <Compile Include="DamerauLevenstheinDistanceCalculator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
