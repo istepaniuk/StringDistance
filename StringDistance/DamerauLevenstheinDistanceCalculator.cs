@@ -10,18 +10,11 @@ namespace Istepaniuk.StringDistance
             if (String.IsNullOrEmpty(source))
             {
                 if (String.IsNullOrEmpty(target))
-                {
                     return 0;
-                }
-                else
-                {
-                    return target.Length;
-                }
+                return target.Length;
             }
-            else if (String.IsNullOrEmpty(target))
-            {
+            if (String.IsNullOrEmpty(target))
                 return source.Length;
-            } 
 
             var score = new int[source.Length + 2, target.Length + 2];
 
