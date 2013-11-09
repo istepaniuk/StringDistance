@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Istepaniuk.StringDistance
 {
-    public class DamerauLevenstheinDistanceCalculator
+    public class DamerauLevenshteinDistanceCalculator
     {
         public int Distance (string source, string target)
         {
@@ -78,3 +78,4 @@ namespace Istepaniuk.StringDistance
         }
     }
 }
+

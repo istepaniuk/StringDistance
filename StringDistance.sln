@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStringDistance", "StringDistance\ConsoleStringDistance.csproj", "{72C20761-113B-4A45-9F46-01806E76C998}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStringDistance", "ConsoleStringDistance\ConsoleStringDistance.csproj", "{72C20761-113B-4A45-9F46-01806E76C998}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C1A65005-0974-4B58-BC9C-1847869BBE73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringDistance", "DamerauLevenshtein\StringDistance.csproj", "{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringDistance", "StringDistance\StringDistance.csproj", "{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
