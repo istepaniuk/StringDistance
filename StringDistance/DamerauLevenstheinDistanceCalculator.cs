@@ -11,6 +11,33 @@ namespace Istepaniuk.StringDistance
             if (AnyStringIsNullOrEmpty (source, target))
                 return LengthOfTheLongestString (source, target);
 
+            var score = PrepareScoreMatrix (source, target);
+            var sd = GetSortedDictionaryWithAllLettersFrom (source, target);
+
+            for (var i = 1; i <= source.Length; i++) {
+                var DB = 0;
+                for (var j = 1; j <= target.Length; j++) {
+                    var i1 = sd [target [j - 1]];
+                    var j1 = DB;
+
+                    if (source [i - 1] == target [j - 1]) {
+                        score [i + 1, j + 1] = score [i, j];
+                        DB = j;
+                    } else {
+                        score [i + 1, j + 1] = Min (score [i, j], score [i + 1, j], score [i, j + 1]) + 1;
+                    }
+
+                    score [i + 1, j + 1] = Min (score [i + 1, j + 1], score [i1, j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
+                }
+
+                sd [source [i - 1]] = i;
+            }
+
+            return score [source.Length + 1, target.Length + 1];
+        }
+
+        private int[,] PrepareScoreMatrix (string source, string  target)
+        {
             var score = new int[source.Length + 2, target.Length + 2];
 
             var INF = source.Length + target.Length;
@@ -24,28 +51,12 @@ namespace Istepaniuk.StringDistance
                 score [0, j + 1] = INF;
             }
 
-            var sd = GetSortedDictionaryWithAllLettersFrom (source, target);
+            return score;
+        }
 
-            for (var i = 1; i <= source.Length; i++) {
-                var DB = 0;
-                for (var j = 1; j <= target.Length; j++) {
-                    var i1 = sd [target [j - 1]];
-                    var j1 = DB;
-
-                    if (source [i - 1] == target [j - 1]) {
-                        score [i + 1, j + 1] = score [i, j];
-                        DB = j;
-                    } else {
-                        score [i + 1, j + 1] = Math.Min (score [i, j], Math.Min (score [i + 1, j], score [i, j + 1])) + 1;
-                    }
-
-                    score [i + 1, j + 1] = Math.Min (score [i + 1, j + 1], score [i1, j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
-                }
-
-                sd [source [i - 1]] = i;
-            }
-
-            return score [source.Length + 1, target.Length + 1];
+        private int Min (params int[] numbers)
+        {
+            return numbers.Min ();
         }
 
         private bool AnyStringIsNullOrEmpty (string string1, string string2)
@@ -58,8 +69,7 @@ namespace Istepaniuk.StringDistance
         {
             return strings
                 .Select (word => word ?? string.Empty)
-                .Select (word => word.Length)
-                .Max ();
+                .Max (word => word.Length);
         }
 
         private  SortedDictionary<char, int> GetSortedDictionaryWithAllLettersFrom (params string[] words)
