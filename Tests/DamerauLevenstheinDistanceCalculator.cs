@@ -77,10 +77,22 @@ namespace Istepaniuk.StringDistance
         }
 
         [Test]
-        public void IfAStringIsAreNullTheDistanceIsTheLengthOfTheOtherOne()
+        public void IfAStringIsNullTheDistanceIsTheLengthOfTheOtherOne()
         {
             calculator.Distance(null, "1234").Should().Be(4);
             calculator.Distance("1234", null).Should().Be(4);
+        }
+
+        [Test]
+        public void DistanceIsOneIfOnePermutationIsNeeded()
+        {
+            calculator.Distance("abcd", "abdc").Should().Be(1);
+        }
+
+        [Test]
+        public void DistanceIsTwoIfTwoPermutationsAreNeeded()
+        {
+            calculator.Distance("abcd", "adbc").Should().Be(2);
         }
     }
 }
