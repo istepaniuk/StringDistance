@@ -47,7 +47,6 @@ Global
 		$3.ArrayInitializerWrapping = DoNotChange
 		$3.ArrayInitializerBraceStyle = NextLine
 		$3.BeforeMethodDeclarationParentheses = False
-		$3.AfterMethodDeclarationParameterComma = False
 		$3.BeforeMethodCallParentheses = False
 		$3.BeforeConstructorDeclarationParentheses = False
 		$3.BeforeDelegateDeclarationParentheses = False
@@ -207,5 +206,10 @@ Global
 		$30.NamingStyle = PascalCase
 		$30.IncludeInstanceMembers = True
 		$30.IncludeStaticEntities = True
+		$0.TextStylePolicy = $32
+		$32.FileWidth = 120
+		$32.inheritsSet = VisualStudio
+		$32.inheritsScope = text/plain
+		$32.scope = text/plain
 	EndGlobalSection
 EndGlobal

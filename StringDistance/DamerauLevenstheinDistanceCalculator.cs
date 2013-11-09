@@ -9,7 +9,7 @@ namespace Istepaniuk.StringDistance
         public int Distance (string source, string target)
         {
             if (AnyStringIsNullOrEmpty (source, target))
-                return LengthOfTheNonEmptyString (source, target);
+                return LengthOfTheLongestString (source, target);
 
             var score = new int[source.Length + 2, target.Length + 2];
 
@@ -54,12 +54,12 @@ namespace Istepaniuk.StringDistance
                 || String.IsNullOrEmpty (string2);
         }
 
-        private int LengthOfTheNonEmptyString (params string[] strings)
+        private int LengthOfTheLongestString (params string[] strings)
         {
             return strings
-                .Select(word => word ?? string.Empty)
-                .Select(word => word.Length)
-                .Max();
+                .Select (word => word ?? string.Empty)
+                .Select (word => word.Length)
+                .Max ();
         }
 
         private  SortedDictionary<char, int> GetSortedDictionaryWithAllLettersFrom (params string[] words)
