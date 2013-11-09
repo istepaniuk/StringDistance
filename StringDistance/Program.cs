@@ -7,7 +7,14 @@ namespace Istepaniuk.StringDistance
     {
         public static void Main (string[] args)
         {
-            Console.WriteLine (new DamerauLevenstheinDistanceCalculator().Distance("Hello", "hello"));
+            if (args.Length < 2)
+            {
+                Console.WriteLine("Usage: string1 string2");
+                return;
+            };
+               
+            var calculator = new DamerauLevenstheinDistanceCalculator();
+            Console.WriteLine (calculator.Distance(args[0], args[1]));
         }
     }
 

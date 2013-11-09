@@ -24,10 +24,10 @@ namespace Istepaniuk.StringDistance
                         score [i + 1, j + 1] = score [i, j];
                         DB = j;
                     } else {
-                        score [i + 1, j + 1] = Min (score [i, j], score [i + 1, j], score [i, j + 1]) + 1;
+                        score [i + 1, j + 1] = Math.Min (score [i, j], Math.Min (score [i + 1, j], score [i, j + 1])) + 1;
                     }
 
-                    score [i + 1, j + 1] = Min (score [i + 1, j + 1], score [i1, j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
+                    score [i + 1, j + 1] = Math.Min (score [i + 1, j + 1], score [i1, j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
                 }
 
                 sd [source [i - 1]] = i;
@@ -52,11 +52,6 @@ namespace Istepaniuk.StringDistance
             }
 
             return score;
-        }
-
-        private int Min (params int[] numbers)
-        {
-            return numbers.Min ();
         }
 
         private bool AnyStringIsNullOrEmpty (string string1, string string2)
