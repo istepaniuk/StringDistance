@@ -49,9 +49,9 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\DamerauLevenshtein\DamerauLevenshtein.csproj">
+    <ProjectReference Include="..\DamerauLevenshtein\StringDistance.csproj">
       <Project>{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}</Project>
-      <Name>DamerauLevenshtein</Name>
+      <Name>StringDistance</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

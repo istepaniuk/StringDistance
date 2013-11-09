@@ -1,5 +1,5 @@
 using System;
-using Istepaniuk.StringDistance.DamerauLevenshtein;
+using Istepaniuk.StringDistance;
 
 namespace Istepaniuk.StringDistance.ConsoleStringDistance
 {
@@ -11,9 +11,9 @@ namespace Istepaniuk.StringDistance.ConsoleStringDistance
             {
                 Console.WriteLine("Usage: string1 string2");
                 return;
-            };
+            }
                
-            var calculator = new DamerauLevenstheinDistanceCalculator();
+            var calculator = new DamerauLevenshteinDistanceCalculator();
             Console.WriteLine (calculator.Distance(args[0], args[1]));
         }
     }
