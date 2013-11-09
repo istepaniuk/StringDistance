@@ -1,0 +1,14 @@
+# Compiled source
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# Tests results
+test-results
+
+# User preferences
+*.userprefs
+
+# Nuget
+packages

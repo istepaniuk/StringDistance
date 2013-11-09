@@ -8,20 +8,54 @@ namespace Istepaniuk.StringDistance
     [TestFixture]
     public class LevenstheinDistanceCalculatorTests
     {
-        [Test]
-        public void TwoEqualStringsHaveDistanceZero ()
-        {
-            var calculator = new LevenstheinDistanceCalculator();
+        private LevenstheinDistanceCalculator calculator;
 
+        [TestFixtureSetUp]
+        public void SetUp()
+        {
+            calculator = new LevenstheinDistanceCalculator();
+        }
+
+        [Test]
+        public void TwoEqualStringsHaveDistanceZero()
+        {
             calculator.Distance("hello", "hello").Should().Be(0);
         }
 
         [Test]
-        public void TwoStringsThatDifferInOneLetterHaveDistanceOfOne ()
+        public void TwoStringsThatDifferInOneLetterHaveDistanceOfOne()
         {
-            var calculator = new LevenstheinDistanceCalculator();
-
             calculator.Distance("hello", "mello").Should().Be(1);
+        }
+
+        [Test]
+        public void TwoStringsThatDifferInOneLetterCaseHaveDistanceOfOne()
+        {
+            calculator.Distance("hello", "Hello").Should().Be(1);
+        }
+
+        [Test]
+        public void TwoStringsThatDifferInTeoLettersHaveDistanceOfTwo()
+        {
+            calculator.Distance("hello", "tallo").Should().Be(2);
+        }
+
+        [Test]
+        public void TwoStringsThatDifferInOneLettersHaveDistanceOfOneIfOneDeletionIsNeeded()
+        {
+            calculator.Distance("hello", "hell").Should().Be(1);
+        }
+
+        [Test]
+        public void TwoStringsThatDifferInOneLettersHaveDistanceOfOneIfOneInsertionIsNeeded()
+        {
+            calculator.Distance("hell", "hello").Should().Be(1);
+        }
+
+        [Test]
+        public void TwoStringsThatDifferInTwoLettersHaveDistanceOfTwoIfTwoInsertionsAreNeeded()
+        {
+            calculator.Distance("hell", "hellow").Should().Be(2);
         }
     }
 }
