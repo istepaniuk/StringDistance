@@ -29,10 +29,17 @@ namespace Istepaniuk.StringDistance
                     }
                     else
                     {
-                        score[i + 1, j + 1] = Math.Min(score[i, j], Math.Min(score[i + 1, j], score[i, j + 1])) + 1;
+                        var a = score[i, j];
+                        var b = score[i + 1, j];
+                        var c = score[i, j + 1];
+
+                        score[i + 1, j + 1] = Math.Min(a, Math.Min(b, c)) + 1;
                     }
 
-                    score[i + 1, j + 1] = Math.Min(score[i + 1, j + 1], score[i1, j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
+                    var x = score[i + 1, j + 1];
+                    var y = score[i1, j1] + (i - i1 - 1) + 1 + (j - j1 - 1);
+
+                    score[i + 1, j + 1] = Math.Min(x, y);
                 }
 
                 sd[source[i - 1]] = i;

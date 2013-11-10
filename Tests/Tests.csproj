@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DamerauLevenshteinDistanceCalculatorTests.cs" />
     <Compile Include="LevenshteinDistanceCalculatorTests.cs" />
+    <Compile Include="HammingDistanceCalculatorTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -58,7 +59,7 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\DamerauLevenshtein\StringDistance.csproj">
+    <ProjectReference Include="..\StringDistance\StringDistance.csproj">
       <Project>{EC829AAF-A180-42EB-8F0C-E8F4C2F6AE7E}</Project>
       <Name>StringDistance</Name>
     </ProjectReference>

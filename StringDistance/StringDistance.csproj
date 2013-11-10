@@ -35,6 +35,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LevenshteinDistanceCalculator.cs" />
     <Compile Include="DamerauLevenshteinDistanceCalculator.cs" />
+    <Compile Include="HammingDistanceCalculator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
