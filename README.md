@@ -29,7 +29,7 @@ The Damerau–Levenshtein distance (named after Frederick J. Damerau and Vladimi
 The Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different. In another way, it measures the minimum number of substitutions required to change one string into the other, or the minimum number of errors that could have transformed one string into the other.
 
     var calc = new HammingDistanceCalculator();
-    var distance = calc.Distance("Hello, world!" "Adios, world!"); // 3
+    var distance = calc.Distance("Hello, world!" "Adios, world!"); // 4
         
 `distance` is 4:
 - 4 Differences/Substitutions (`Hello` -> `Adios`)
